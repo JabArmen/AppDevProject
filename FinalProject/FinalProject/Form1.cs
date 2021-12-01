@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,19 @@ namespace FinalProject
 {
     public partial class Menu : Form
     {
+        ArrayList teachers = new ArrayList();
+        ArrayList students = new ArrayList();
+        ArrayList courses = new ArrayList();
+        String pathStudent;
+        String pathTeacher;
+        String pathCourse;
+
         public Menu()
         {
             InitializeComponent();
+
         }
+
+
     }
 }
