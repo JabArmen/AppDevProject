@@ -8,7 +8,7 @@ namespace FinalProject
 {
     class Teacher : User
     {
-        public static int newId = 0;
+        public static int newId = 1;
         Teacher(String fname, String lname) : base(fname, lname)
         {
             generateId();

@@ -9,7 +9,7 @@ namespace FinalProject
     class Student : User
     {
 
-        public static int newId = 0;
+        public static int newId = 1;
         Student(String fname, String lname) : base(fname, lname)
         {
             generateId();

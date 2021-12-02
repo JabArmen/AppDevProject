@@ -44,7 +44,6 @@ namespace FinalProject
                     str = str.Substring(0, i + 1) +
                             str.Substring(i + 1, i + 2).ToUpper() +
                             str.Substring(i + 2, str.Length);
-
                 }
             }
             return str;
