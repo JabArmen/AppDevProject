@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    abstract class User
+    [Serializable]
+    public abstract class User
     {
-        protected String Id { get; set; }
-        protected String Password { get; set; }
-        protected String Fname { get; set; }
-        protected String Lname { get; set; }
+        public String Id { get; set; }
+        public String Password { get; set; }
+        public String name { get; set; }
 
-        protected User(String fname, String lname)
+        protected User(String name)
         {
             this.Password = "1234";
-            this.Fname = fname;
-            this.Lname = lname;
+            this.name = name;
         }
-        protected User(String password, String fname, String lname)
+        protected User(String password, String name)
         {
             this.Password = password;
-            this.Fname = fname;
-            this.Lname = lname;
+            this.name = name;
         }
 
         /*

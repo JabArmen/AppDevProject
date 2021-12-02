@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class Student : User
+    [Serializable]
+    public class Student : User
     {
 
         public static int newId = 1;
-        Student(String fname, String lname) : base(fname, lname)
+        public Student(String name) : base(name)
         {
             generateId();
         }
-        Student(String password, String fname, String lname) : base(password, fname, lname)
+        public Student(String password, String name) : base(password, name)
         {
             generateId();
         }
@@ -24,5 +25,11 @@ namespace FinalProject
             this.Id = String.Format("S{0:000}", newId);
             newId++;
         }
+        public override bool Equals(Object obj)
+        {
+            return this.Id == ((Student)obj).Id;
+        }
+
+        public override int GetHashCode() { return 0; }
     }
 }

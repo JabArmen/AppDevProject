@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class Admin : User
+    public class Admin : User
     {
         private static int newId = 1;
-        Admin(String fname, String lname) : base(fname, lname)
+        public Admin(String name) : base(name)
         {
             generateId();
         }
-        Admin(String password, String fname, String lname) : base(password, fname, lname)
+        public Admin(String password, String name ) : base(password, name)
         {
             generateId();
         }
@@ -23,5 +23,12 @@ namespace FinalProject
             this.Id = String.Format("A{0:000}", newId);
             newId++;
         }
+
+        public override bool Equals(Object obj)
+        {
+            return this.Id == ((Admin)obj).Id;
+        }
+        public override int GetHashCode() { return 0; }
+
     }
 }
