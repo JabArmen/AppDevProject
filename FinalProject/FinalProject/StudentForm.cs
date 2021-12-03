@@ -12,14 +12,17 @@ namespace FinalProject
 {
     public partial class StudentForm : Form
     {
-        Student student;
-        public StudentForm(Student student)
+        private Student student;
+        private Menu menu;
+        public StudentForm(Student student, Menu menu)
         {
             this.student = student;
+            this.menu = menu;
             InitializeComponent();
+            welcomeL.Text = "Welcome back, " + student.name;
         }
 
-        private void StudenForm_Load(object sender, EventArgs e)
+        private void StudentForm_Load(object sender, EventArgs e)
         {
 
         }

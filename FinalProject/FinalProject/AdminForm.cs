@@ -14,8 +14,10 @@ namespace FinalProject
     public partial class AdminForm : Form
     {
         private Admin admin;
-        public AdminForm(Admin admin)
+        private Menu menu;
+        public AdminForm(Admin admin, Menu menu)
         {
+            this.menu = menu;
             this.admin = admin;
             InitializeComponent();
             welcomeL.Text = "Welcome back, " + admin.name;
@@ -68,6 +70,7 @@ namespace FinalProject
 
         private void addB_Click(object sender, EventArgs e)
         {
+            errorL.Text = "";
             if (nameTB.Text != "")
             {
                 errorL.Text = "";
@@ -77,9 +80,8 @@ namespace FinalProject
                     FinalProject.Menu.students.Add(student);
                     FinalProject.Menu.SerializeAll();
                 }
-                if (teacherRB.Checked == true)
+                else if (teacherRB.Checked == true)
                 {
-                    displayL.Text = "amongus cock";
                     Teacher teacher = new Teacher(nameTB.Text);
                     FinalProject.Menu.teachers.Add(teacher);
                     FinalProject.Menu.SerializeAll();
@@ -107,7 +109,7 @@ namespace FinalProject
                         if (teacherFound)
                         {
                             Course course = new Course(nameTB.Text, new ArrayList(), (Teacher)
-                                FinalProject.Menu.teachers[teacherIndex], 5);
+                            FinalProject.Menu.teachers[teacherIndex], 5);
                             FinalProject.Menu.courses.Add(course);
                         }
                         else
@@ -132,21 +134,40 @@ namespace FinalProject
                 ArrayList students = (FinalProject.Menu.students);
                 foreach (Student student in students)
                 {
-                    displayL.Text += "Student: " + student.Id + "\n\tName: " + student.name + "\n";
+                    displayL.Text += "Student: " + student.Id + "\n     Name: " + student.name + "\n";
                 }
             }
             else if (teacherRB.Checked == true)
             {
-
+                ArrayList teachers = (FinalProject.Menu.teachers);
+                foreach (Teacher teacher in teachers)
+                {
+                    displayL.Text += "Teacher: " + teacher.Id + "\n     Name: " + teacher.name + "\n";
+                }
             }
             else
             {
-
+                ArrayList courses = (FinalProject.Menu.courses);
+                foreach (Course course in courses)
+                {
+                    displayL.Text += "Course: " + course.Id + "\n     Name: " + course.name + "\n     Teacher: "
+                        + course.teacher.name;
+                    foreach (Student student in course.students)
+                        displayL.Text += "\n     " + student.Id + ": " + student.name;
+                }
             }
         }
 
         private void closeB_Click(object sender, EventArgs e)
         {
+            this.Visible = false;
+            menu.Visible = true;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            menu.Close();
+            this.Close();
             Application.Exit();
         }
     }

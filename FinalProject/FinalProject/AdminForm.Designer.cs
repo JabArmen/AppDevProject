@@ -42,8 +42,8 @@ namespace FinalProject
             this.elementsL = new System.Windows.Forms.Label();
             this.displayL = new System.Windows.Forms.Label();
             this.displayB = new System.Windows.Forms.Button();
-            this.closeB = new System.Windows.Forms.Button();
             this.errorL = new System.Windows.Forms.Label();
+            this.closeB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -190,16 +190,6 @@ namespace FinalProject
             this.displayB.UseVisualStyleBackColor = true;
             this.displayB.Click += new System.EventHandler(this.displayB_Click);
             // 
-            // closeB
-            // 
-            this.closeB.Location = new System.Drawing.Point(110, 277);
-            this.closeB.Name = "closeB";
-            this.closeB.Size = new System.Drawing.Size(243, 131);
-            this.closeB.TabIndex = 13;
-            this.closeB.Text = "CLOSEFUCKING CLOSE";
-            this.closeB.UseVisualStyleBackColor = true;
-            this.closeB.Click += new System.EventHandler(this.closeB_Click);
-            // 
             // errorL
             // 
             this.errorL.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,6 +198,17 @@ namespace FinalProject
             this.errorL.Name = "errorL";
             this.errorL.Size = new System.Drawing.Size(244, 23);
             this.errorL.TabIndex = 14;
+            // 
+            // closeB
+            // 
+            this.closeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeB.Location = new System.Drawing.Point(26, 328);
+            this.closeB.Name = "closeB";
+            this.closeB.Size = new System.Drawing.Size(157, 53);
+            this.closeB.TabIndex = 13;
+            this.closeB.Text = "<<Login ";
+            this.closeB.UseVisualStyleBackColor = true;
+            this.closeB.Click += new System.EventHandler(this.closeB_Click);
             // 
             // AdminForm
             // 
@@ -245,7 +246,7 @@ namespace FinalProject
         private System.Windows.Forms.Button addB;
         private System.Windows.Forms.Label displayL;
         private System.Windows.Forms.Button displayB;
-        private System.Windows.Forms.Button closeB;
         private System.Windows.Forms.Label errorL;
+        private System.Windows.Forms.Button closeB;
     }
 }

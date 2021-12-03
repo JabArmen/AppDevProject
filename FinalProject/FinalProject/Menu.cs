@@ -46,7 +46,7 @@ namespace FinalProject
                                 && mainAdmin.Password.Equals(PasswordTB.Text))
                         {
                             this.Visible = false;
-                            new AdminForm(mainAdmin).Visible = true;
+                            new AdminForm(mainAdmin, this).Visible = true;
                             return;
                         }
                         break;
@@ -56,7 +56,7 @@ namespace FinalProject
                                     && student.Password.Equals(PasswordTB.Text))
                             {
                                 this.Visible = false;
-                                new StudentForm(student).Visible = true;
+                                new StudentForm(student,this).Visible = true;
                                 return;
                             }
                         break;
