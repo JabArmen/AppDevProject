@@ -31,13 +31,13 @@ namespace FinalProject
         {
             this.SuspendLayout();
             // 
-            // StudenForm
+            // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "StudenForm";
-            this.Text = "StudenForm";
+            this.Name = "StudentForm";
+            this.Text = "StudentForm";
             this.Load += new System.EventHandler(this.StudenForm_Load);
             this.ResumeLayout(false);
 

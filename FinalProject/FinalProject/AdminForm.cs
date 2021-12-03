@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,125 @@ namespace FinalProject
         private void AdminForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void elementsL_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Course_CheckedChanged(object sender, EventArgs e)
+        {
+            teacherTB.Text = "";
+            nameTB.Text = "";
+            if (Course.Checked == true)
+            {
+                teacherL.Visible = true;
+                teacherTB.Visible = true;
+
+            }
+            else
+            {
+                teacherL.Visible = false;
+                teacherTB.Visible = false;
+
+            }
+        }
+
+        private void studentRB_CheckedChanged(object sender, EventArgs e)
+        {
+            teacherTB.Text = "";
+            nameTB.Text = "";
+        }
+
+        private void teacherRB_CheckedChanged(object sender, EventArgs e)
+        {
+            teacherTB.Text = "";
+            nameTB.Text = "";
+        }
+
+        private void addB_Click(object sender, EventArgs e)
+        {
+            if (nameTB.Text != "")
+            {
+                errorL.Text = "";
+                if (studentRB.Checked == true)
+                {
+                    Student student = new Student(nameTB.Text);
+                    FinalProject.Menu.students.Add(student);
+                    FinalProject.Menu.SerializeAll();
+                }
+                if (teacherRB.Checked == true)
+                {
+                    displayL.Text = "amongus cock";
+                    Teacher teacher = new Teacher(nameTB.Text);
+                    FinalProject.Menu.teachers.Add(teacher);
+                    FinalProject.Menu.SerializeAll();
+                }
+                else
+                {
+
+                    Boolean teacherFound = false;
+                    int teacherIndex = 0;
+                    if (teacherTB.Text == "")
+                        errorL.Text = "Please input a teacher ID!";
+                    else
+                    {
+                        foreach (Teacher teacher in FinalProject.Menu.teachers)
+                        {
+                            if (teacher.Id == teacherTB.Text)
+                            {
+                                teacherFound = true;
+                            }
+                            else
+                            {
+                                teacherIndex++;
+                            }
+                        }
+                        if (teacherFound)
+                        {
+                            Course course = new Course(nameTB.Text, new ArrayList(), (Teacher)
+                                FinalProject.Menu.teachers[teacherIndex], 5);
+                            FinalProject.Menu.courses.Add(course);
+                        }
+                        else
+                            errorL.Text = "Teacher not found!";
+                    }
+                }
+            }
+            else { }
+            FinalProject.Menu.SerializeAll();
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
+
+        private void displayB_Click(object sender, EventArgs e)
+        {
+            displayL.Text = "";
+            if (studentRB.Checked == true)
+            {
+                ArrayList students = (FinalProject.Menu.students);
+                foreach (Student student in students)
+                {
+                    displayL.Text += "Student: " + student.Id + "\n\tName: " + student.name + "\n";
+                }
+            }
+            else if (teacherRB.Checked == true)
+            {
+
+            }
+            else
+            {
+
+            }
+        }
+
+        private void closeB_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

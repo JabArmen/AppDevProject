@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,16 @@ namespace FinalProject
     [Serializable]
     public class Teacher : User
     {
-        public static int newId = 1;
+        public static int newId = 0;
+
+        public ArrayList teachingCourses;
         
         public Teacher(String password, String name) : base(password, name)
+        {
+            generateId();
+        }
+
+        public Teacher(String name) : base(name)
         {
             generateId();
         }

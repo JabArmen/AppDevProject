@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace FinalProject
     [Serializable]
     public class Student : User
     {
-
-        public static int newId = 1;
+        public ArrayList studentCourses = new ArrayList();
+        public static int newId = 0;
         public Student(String name) : base(name)
         {
             generateId();

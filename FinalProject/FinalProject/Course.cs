@@ -10,15 +10,15 @@ namespace FinalProject
     [Serializable]
     public class Course 
     {
-        public static int newId = 1;
-        protected String Id { get; set; }
+        public static int newId = 0;
+        public String Id { get; set; }
 
-        protected String name { get; set; }
+        public String name { get; set; }
 
-        protected ArrayList students = new ArrayList();
-        protected Teacher teacher { get; set; }
+        public ArrayList students = new ArrayList();
+        public Teacher teacher { get; set; }
 
-        protected int maxStudents { get; set; }
+        public int maxStudents { get; set; }
 
         public Course(String name, ArrayList students, Teacher teacher, int maxStudents) 
         {
