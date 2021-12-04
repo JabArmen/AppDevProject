@@ -16,8 +16,9 @@ namespace FinalProject
         public String name { get; set; }
 
         public ArrayList students = new ArrayList();
-        public Teacher teacher { get; set; }
 
+        public ArrayList finalScores = new ArrayList();
+        public Teacher teacher { get; set; }
         public int maxStudents { get; set; }
 
         public Course(String name, ArrayList students, Teacher teacher, int maxStudents) 
@@ -26,6 +27,7 @@ namespace FinalProject
             this.students = students;
             this.teacher = teacher;
             this.maxStudents = maxStudents;
+            
             generateId();
         }
         public void generateId()
