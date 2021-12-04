@@ -22,3 +22,4 @@ C:\Users\Mushegh\OneDrive - Vanier College\Desktop\AppDevProject\FinalProject\Fi
 C:\Users\Mushegh\OneDrive - Vanier College\Desktop\AppDevProject\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Mushegh\OneDrive - Vanier College\Desktop\AppDevProject\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Mushegh\OneDrive - Vanier College\Desktop\AppDevProject\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\Mushegh\OneDrive - Vanier College\Desktop\AppDevProject\FinalProject\FinalProject\obj\Debug\FinalProject.TeacherForm.resources

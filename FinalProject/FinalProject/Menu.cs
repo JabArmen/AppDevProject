@@ -66,7 +66,7 @@ namespace FinalProject
                                     && teacher.Password.Equals(PasswordTB.Text))
                             {
                                 this.Visible = false;
-                                new TeacherForm(teacher).Visible = true; ;
+                                new TeacherForm(teacher, this).Visible = true; ;
                                 return;
                             }
                         break;
