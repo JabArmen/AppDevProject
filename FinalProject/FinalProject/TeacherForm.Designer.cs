@@ -31,14 +31,14 @@ namespace FinalProject
         {
             this.welcomeL = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.StudentL = new System.Windows.Forms.Label();
+            this.StudentTB = new System.Windows.Forms.TextBox();
+            this.ScoreL = new System.Windows.Forms.Label();
+            this.ScoreTB = new System.Windows.Forms.TextBox();
             this.closeB = new System.Windows.Forms.Button();
             this.AddB = new System.Windows.Forms.Button();
             this.CourseL = new System.Windows.Forms.Label();
             this.courseTB = new System.Windows.Forms.TextBox();
-            this.ScoreL = new System.Windows.Forms.Label();
-            this.ScoreTB = new System.Windows.Forms.TextBox();
-            this.StudentL = new System.Windows.Forms.Label();
-            this.StudentTB = new System.Windows.Forms.TextBox();
             this.displayL = new System.Windows.Forms.Label();
             this.displayB = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -72,6 +72,38 @@ namespace FinalProject
             this.panel1.Size = new System.Drawing.Size(262, 240);
             this.panel1.TabIndex = 13;
             // 
+            // StudentL
+            // 
+            this.StudentL.AutoSize = true;
+            this.StudentL.Location = new System.Drawing.Point(3, 65);
+            this.StudentL.Name = "StudentL";
+            this.StudentL.Size = new System.Drawing.Size(52, 15);
+            this.StudentL.TabIndex = 18;
+            this.StudentL.Text = "Student:";
+            // 
+            // StudentTB
+            // 
+            this.StudentTB.Location = new System.Drawing.Point(58, 65);
+            this.StudentTB.Name = "StudentTB";
+            this.StudentTB.Size = new System.Drawing.Size(181, 20);
+            this.StudentTB.TabIndex = 17;
+            // 
+            // ScoreL
+            // 
+            this.ScoreL.AutoSize = true;
+            this.ScoreL.Location = new System.Drawing.Point(3, 91);
+            this.ScoreL.Name = "ScoreL";
+            this.ScoreL.Size = new System.Drawing.Size(42, 15);
+            this.ScoreL.TabIndex = 16;
+            this.ScoreL.Text = "Score:";
+            // 
+            // ScoreTB
+            // 
+            this.ScoreTB.Location = new System.Drawing.Point(58, 91);
+            this.ScoreTB.Name = "ScoreTB";
+            this.ScoreTB.Size = new System.Drawing.Size(181, 20);
+            this.ScoreTB.TabIndex = 15;
+            // 
             // closeB
             // 
             this.closeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -92,6 +124,7 @@ namespace FinalProject
             this.AddB.TabIndex = 3;
             this.AddB.Text = "Add";
             this.AddB.UseVisualStyleBackColor = true;
+            this.AddB.Click += new System.EventHandler(this.AddB_Click);
             // 
             // CourseL
             // 
@@ -108,38 +141,6 @@ namespace FinalProject
             this.courseTB.Name = "courseTB";
             this.courseTB.Size = new System.Drawing.Size(181, 20);
             this.courseTB.TabIndex = 0;
-            // 
-            // ScoreL
-            // 
-            this.ScoreL.AutoSize = true;
-            this.ScoreL.Location = new System.Drawing.Point(3, 91);
-            this.ScoreL.Name = "ScoreL";
-            this.ScoreL.Size = new System.Drawing.Size(42, 15);
-            this.ScoreL.TabIndex = 16;
-            this.ScoreL.Text = "Score:";
-            // 
-            // ScoreTB
-            // 
-            this.ScoreTB.Location = new System.Drawing.Point(58, 91);
-            this.ScoreTB.Name = "ScoreTB";
-            this.ScoreTB.Size = new System.Drawing.Size(181, 20);
-            this.ScoreTB.TabIndex = 15;
-            // 
-            // StudentL
-            // 
-            this.StudentL.AutoSize = true;
-            this.StudentL.Location = new System.Drawing.Point(3, 65);
-            this.StudentL.Name = "StudentL";
-            this.StudentL.Size = new System.Drawing.Size(52, 15);
-            this.StudentL.TabIndex = 18;
-            this.StudentL.Text = "Student:";
-            // 
-            // StudentTB
-            // 
-            this.StudentTB.Location = new System.Drawing.Point(58, 65);
-            this.StudentTB.Name = "StudentTB";
-            this.StudentTB.Size = new System.Drawing.Size(181, 20);
-            this.StudentTB.TabIndex = 17;
             // 
             // displayL
             // 
@@ -160,6 +161,7 @@ namespace FinalProject
             this.displayB.TabIndex = 20;
             this.displayB.Text = "Display";
             this.displayB.UseVisualStyleBackColor = true;
+            this.displayB.Click += new System.EventHandler(this.displayB_Click);
             // 
             // TeacherForm
             // 

@@ -33,23 +33,20 @@ namespace FinalProject
             displayL.Text = "";
             foreach (Course course in student.studentCourses)
             {
-                displayL.Text += course.name + ": " + Grade(course) + "\n";
+                 Grade(course);
             }
         }
 
-        private double Grade(Course course)
+        private void Grade(Course course)
         {
             for(int i = 0; i < course.students.Count; i++)
             {
-                displayL.Text = course.students.Count + "";
                 Student thisStudent = (Student)course.students[i];
-                displayL.Text += "After Studer";
                 if (student.Id == thisStudent.Id && course.finalScores.Count > i)
                 {
-                    return (double)course.finalScores[i];
+                    displayL.Text += course.name + ": " + course.finalScores[i] + "\n";
                 }
             }
-            return -1;
         }
 
         private void RegesterB_Click(object sender, EventArgs e)
@@ -59,6 +56,7 @@ namespace FinalProject
             {
                 student.studentCourses.Add(pickCourse(courses));
                 pickCourse(courses).students.Add(student);
+                pickCourse(courses).finalScores.Add((double)-1);
                 FinalProject.Menu.SerializeAll();
             }
         }

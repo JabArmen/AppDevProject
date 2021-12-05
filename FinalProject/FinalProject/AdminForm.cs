@@ -101,23 +101,24 @@ namespace FinalProject
                             {
                                 teacherFound = true;
                             }
-                            else
+                            else if (!teacherFound)
                             {
                                 teacherIndex++;
                             }
                         }
                         if (teacherFound)
                         {
-                            Course course = new Course(nameTB.Text, new ArrayList(), (Teacher)
-                            FinalProject.Menu.teachers[teacherIndex], 5);
+                            Teacher teacher = (Teacher)FinalProject.Menu.teachers[teacherIndex];
+                            Course course = new Course(nameTB.Text, new ArrayList(), teacher, 5);
+                            
                             FinalProject.Menu.courses.Add(course);
+                            teacher.teachingCourses.Add(course);
                         }
                         else
                             errorL.Text = "Teacher not found!";
                     }
                 }
             }
-            else { }
             FinalProject.Menu.SerializeAll();
         }
 
@@ -143,6 +144,7 @@ namespace FinalProject
                 foreach (Teacher teacher in teachers)
                 {
                     displayL.Text += "Teacher: " + teacher.Id + "\n     Name: " + teacher.name + "\n";
+                    
                 }
             }
             else
@@ -151,9 +153,10 @@ namespace FinalProject
                 foreach (Course course in courses)
                 {
                     displayL.Text += "Course: " + course.Id + "\n     Name: " + course.name + "\n     Teacher: "
-                        + course.teacher.name;
+                        + course.teacher.name + "\n";
                     foreach (Student student in course.students)
-                        displayL.Text += "\n     " + student.Id + ": " + student.name;
+                        displayL.Text += "     " + student.Id + ": " + student.name + "\n";
+                    
                 }
             }
         }

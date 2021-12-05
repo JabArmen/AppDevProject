@@ -12,7 +12,7 @@ namespace FinalProject
     {
         public static int newId = 0;
 
-        public ArrayList teachingCourses;
+        public ArrayList teachingCourses = new ArrayList();
         
         public Teacher(String password, String name) : base(password, name)
         {

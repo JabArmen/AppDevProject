@@ -13,7 +13,7 @@ namespace FinalProject
         public static ArrayList students = new ArrayList();
         public static ArrayList courses = new ArrayList();
 
-        public static Admin mainAdmin = new Admin("0000", "Main Admin");
+        public static Admin mainAdmin = new Admin("1234", "Main Admin");
 
         public Menu()
         {
@@ -33,6 +33,7 @@ namespace FinalProject
                 courses = DeserializeCourse();
                 Course.newId = DeserializeCourse().Count;
             }
+            PasswordTB.Text = "1234";
         }
 
         private void SubmitB_Click(object sender, EventArgs e)
@@ -78,7 +79,33 @@ namespace FinalProject
             }
             errorL.Text = "Wrong password or User ID!";
         }
+        public class NameSorter : IComparer
+        {
+            // Call CaseInsensitiveComparer.Compare with the parameters reversed.
+            int IComparer.Compare(Object x, Object y)
+            {
+                Student s1 = (Student)x;
+                Student s2 = (Student)x;
+                if (s1.name.Equals(s2.name))
+                {
+                    return 0;
+                }
 
+                for(int i = 0; i < Math.Min(s1.name.Length, s2.name.Length); i++)
+                {
+                    if( s1.name[i] > s2.name[i])
+                    {
+                        return 1;
+                    } else if (s1.name[i] < s2.name[i])
+                    {
+                        return -1;
+                    }
+                }
+                if (s1.name.Length > s2.name.Length)
+                    return 1;
+                return -1;
+            }
+        }
         public static void SerializeAll()
         {
             IFormatter formatter = new BinaryFormatter();
@@ -91,7 +118,6 @@ namespace FinalProject
             stream.Close();
             stream1.Close();
             stream2.Close();
-
         }
 
         public static ArrayList DeserializeCourse()
