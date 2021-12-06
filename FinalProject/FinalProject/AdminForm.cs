@@ -52,7 +52,6 @@ namespace FinalProject
             {
                 teacherL.Visible = false;
                 teacherTB.Visible = false;
-
             }
         }
 
@@ -67,7 +66,27 @@ namespace FinalProject
             teacherTB.Text = "";
             nameTB.Text = "";
         }
+        private void PasswordRB_CheckedChanged(object sender, EventArgs e)
+        {
+            if(PasswordRB.Checked == true)
+            {
+                addB.Text = "Change";
+                nameL.Text = "ID:";
+                teacherL.Text = "New Password:";
+                teacherL.Visible = true;
+                teacherTB.Visible = true;
 
+            } else
+            {
+                addB.Text = "Add";
+                nameL.Text = "Name:";
+                teacherL.Text = "Teacher:";
+                teacherL.Visible = false;
+                teacherTB.Visible = false;
+            }
+            teacherTB.Text = "";
+            nameTB.Text = "";
+        }
         private void addB_Click(object sender, EventArgs e)
         {
             errorL.Text = "";
@@ -85,6 +104,25 @@ namespace FinalProject
                     Teacher teacher = new Teacher(nameTB.Text);
                     FinalProject.Menu.teachers.Add(teacher);
                     FinalProject.Menu.SerializeAll();
+                } else if(PasswordRB.Checked == true)
+                {
+                    Boolean Userfound = false;
+                    
+                    foreach (Teacher teacher in FinalProject.Menu.teachers)
+                    {
+                        if (teacher.Id == nameTB.Text)
+                        {
+                            Userfound = true;
+                            teacher.Password = teacherTB.Text;
+                            return;
+                        }
+                    }
+                    foreach (Student student in FinalProject.Menu.students) { 
+                        if (student.Id == nameTB.Text)
+                        {
+                            student.Password = teacherTB.Text;
+                        }
+                    }
                 }
                 else
                 {
@@ -173,5 +211,12 @@ namespace FinalProject
             this.Close();
             Application.Exit();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
     }
 }
