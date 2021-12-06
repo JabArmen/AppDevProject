@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,25 +39,45 @@ namespace FinalProject
 
         private void AddB_Click(object sender, EventArgs e)
         {
+            errorL.Text = "";
+            Course course1 = (Course)(FinalProject.Menu.courses[0]);
             foreach (Course course in teacher.teachingCourses)
             {
+                 
                 if (course.Id == courseTB.Text)
                 {
-                    displayL.Text = course.students.Count + "";
                     for (int i = 0; i < course.students.Count; i++)
                     {
                         
                         Student student = (Student)(course.students[i]);
-                        displayL.Text += student.name + ", ";
                         if (student.Id == StudentTB.Text)
                         {
-                            course.finalScores[i] = Double.Parse(ScoreTB.Text);
-                            displayL.Text += "Done1";
+                            double grade;
+                            if (Double.TryParse(ScoreTB.Text, out grade)) {
+                                course.finalScores[i] = grade;
+                                FinalProject.Menu.SerializeAll();
+                               
+                                return;
+                            }
+                            errorL.Text = "the grade should be a numeric value";
+                            return;
                         }
                     }
+                    errorL.Text = "student is not valid";
+                    return;
                 }
             }
-            FinalProject.Menu.SerializeAll();
+            errorL.Text = "course is not valid";
+
+        }
+        public class StudentComparer : IComparer
+        {
+            int IComparer.Compare(Object xx, Object yy)
+            {
+                Student x = (Student)xx;
+                Student y = (Student)yy;
+                return x.name.CompareTo(y.name);
+            }
         }
         private void displayB_Click(object sender, EventArgs e)
         {
@@ -65,14 +86,21 @@ namespace FinalProject
             foreach (Course course in teacher.teachingCourses)
             {
                 displayL.Text += "Course: " + course.name + "\n";
-                for (int i = 0; i < course.students.Count; i++)
+                ArrayList students = new ArrayList(course.students);
+                students.Sort(new StudentComparer());
+                for (int i = 0; i < students.Count; i++)
                 {
-                    Student student = (Student)(course.students[i]);
-                    displayL.Text += "  " + student.name + ": " + course.finalScores[i] + "\n";
-                   
+                    Student student1 = (Student)(students[i]);
+                    for (int j = 0; j < course.students.Count; j++)
+                    {
+                        Student student2 = (Student)course.students[j];
+                        if(student1.Id == student2.Id)
+                        {
+                            displayL.Text += "  " + student2.name + ": " + course.finalScores[j] + "\n";
+                        }
+                    }
                 }
             }
-           
         }
     }
 }

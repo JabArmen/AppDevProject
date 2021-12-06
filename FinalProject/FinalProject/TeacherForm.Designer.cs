@@ -41,6 +41,7 @@ namespace FinalProject
             this.courseTB = new System.Windows.Forms.TextBox();
             this.displayL = new System.Windows.Forms.Label();
             this.displayB = new System.Windows.Forms.Button();
+            this.errorL = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,11 +164,21 @@ namespace FinalProject
             this.displayB.UseVisualStyleBackColor = true;
             this.displayB.Click += new System.EventHandler(this.displayB_Click);
             // 
+            // errorL
+            // 
+            this.errorL.AutoSize = true;
+            this.errorL.ForeColor = System.Drawing.Color.Red;
+            this.errorL.Location = new System.Drawing.Point(12, 316);
+            this.errorL.Name = "errorL";
+            this.errorL.Size = new System.Drawing.Size(0, 15);
+            this.errorL.TabIndex = 21;
+            // 
             // TeacherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(535, 358);
+            this.Controls.Add(this.errorL);
             this.Controls.Add(this.displayB);
             this.Controls.Add(this.displayL);
             this.Controls.Add(this.panel1);
@@ -177,6 +188,7 @@ namespace FinalProject
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -194,5 +206,6 @@ namespace FinalProject
         private System.Windows.Forms.TextBox ScoreTB;
         private System.Windows.Forms.Label displayL;
         private System.Windows.Forms.Button displayB;
+        private System.Windows.Forms.Label errorL;
     }
 }

@@ -106,6 +106,7 @@ namespace FinalProject
                 return -1;
             }
         }
+        
         public static void SerializeAll()
         {
             IFormatter formatter = new BinaryFormatter();

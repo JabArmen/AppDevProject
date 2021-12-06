@@ -51,6 +51,7 @@ namespace FinalProject
 
         private void RegesterB_Click(object sender, EventArgs e)
         {
+            errorL.Text = "";
             ArrayList courses = FinalProject.Menu.courses;
             if (pickCourse(courses) != null)
             {
@@ -58,7 +59,10 @@ namespace FinalProject
                 pickCourse(courses).students.Add(student);
                 pickCourse(courses).finalScores.Add((double)-1);
                 FinalProject.Menu.SerializeAll();
+                
+                return;
             }
+            errorL.Text = "Inserted course is not valid";
         }
 
         private void CourseInfoB_Click(object sender, EventArgs e)

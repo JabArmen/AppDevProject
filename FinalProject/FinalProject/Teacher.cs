@@ -10,7 +10,7 @@ namespace FinalProject
     [Serializable]
     public class Teacher : User
     {
-        public static int newId = 0;
+        public static int newId = 1;
 
         public ArrayList teachingCourses = new ArrayList();
         

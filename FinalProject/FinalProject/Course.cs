@@ -10,7 +10,7 @@ namespace FinalProject
     [Serializable]
     public class Course 
     {
-        public static int newId = 0;
+        public static int newId = 1;
         public String Id { get; set; }
 
         public String name { get; set; }

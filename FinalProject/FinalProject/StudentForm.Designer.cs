@@ -33,11 +33,12 @@ namespace FinalProject
             this.displayL = new System.Windows.Forms.Label();
             this.DisplayScoresB = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.closeB = new System.Windows.Forms.Button();
+            this.CourseInfoB = new System.Windows.Forms.Button();
             this.RegesterB = new System.Windows.Forms.Button();
             this.CourseL = new System.Windows.Forms.Label();
             this.courseTB = new System.Windows.Forms.TextBox();
-            this.CourseInfoB = new System.Windows.Forms.Button();
-            this.closeB = new System.Windows.Forms.Button();
+            this.errorL = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +86,28 @@ namespace FinalProject
             this.panel1.Size = new System.Drawing.Size(262, 240);
             this.panel1.TabIndex = 12;
             // 
+            // closeB
+            // 
+            this.closeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeB.Location = new System.Drawing.Point(20, 193);
+            this.closeB.Margin = new System.Windows.Forms.Padding(2);
+            this.closeB.Name = "closeB";
+            this.closeB.Size = new System.Drawing.Size(118, 43);
+            this.closeB.TabIndex = 14;
+            this.closeB.Text = "<<Login ";
+            this.closeB.UseVisualStyleBackColor = true;
+            this.closeB.Click += new System.EventHandler(this.closeB_Click);
+            // 
+            // CourseInfoB
+            // 
+            this.CourseInfoB.Location = new System.Drawing.Point(135, 68);
+            this.CourseInfoB.Name = "CourseInfoB";
+            this.CourseInfoB.Size = new System.Drawing.Size(103, 23);
+            this.CourseInfoB.TabIndex = 4;
+            this.CourseInfoB.Text = "Course Info";
+            this.CourseInfoB.UseVisualStyleBackColor = true;
+            this.CourseInfoB.Click += new System.EventHandler(this.CourseInfoB_Click);
+            // 
             // RegesterB
             // 
             this.RegesterB.Location = new System.Drawing.Point(164, 91);
@@ -111,33 +134,21 @@ namespace FinalProject
             this.courseTB.Size = new System.Drawing.Size(181, 20);
             this.courseTB.TabIndex = 0;
             // 
-            // CourseInfoB
+            // errorL
             // 
-            this.CourseInfoB.Location = new System.Drawing.Point(135, 68);
-            this.CourseInfoB.Name = "CourseInfoB";
-            this.CourseInfoB.Size = new System.Drawing.Size(103, 23);
-            this.CourseInfoB.TabIndex = 4;
-            this.CourseInfoB.Text = "Course Info";
-            this.CourseInfoB.UseVisualStyleBackColor = true;
-            this.CourseInfoB.Click += new System.EventHandler(this.CourseInfoB_Click);
-            // 
-            // closeB
-            // 
-            this.closeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeB.Location = new System.Drawing.Point(20, 193);
-            this.closeB.Margin = new System.Windows.Forms.Padding(2);
-            this.closeB.Name = "closeB";
-            this.closeB.Size = new System.Drawing.Size(118, 43);
-            this.closeB.TabIndex = 14;
-            this.closeB.Text = "<<Login ";
-            this.closeB.UseVisualStyleBackColor = true;
-            this.closeB.Click += new System.EventHandler(this.closeB_Click);
+            this.errorL.AutoSize = true;
+            this.errorL.ForeColor = System.Drawing.Color.Red;
+            this.errorL.Location = new System.Drawing.Point(27, 299);
+            this.errorL.Name = "errorL";
+            this.errorL.Size = new System.Drawing.Size(0, 15);
+            this.errorL.TabIndex = 13;
             // 
             // StudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 368);
+            this.Controls.Add(this.errorL);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DisplayScoresB);
             this.Controls.Add(this.displayL);
@@ -149,6 +160,7 @@ namespace FinalProject
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -163,5 +175,6 @@ namespace FinalProject
         private System.Windows.Forms.Button RegesterB;
         private System.Windows.Forms.Button CourseInfoB;
         private System.Windows.Forms.Button closeB;
+        private System.Windows.Forms.Label errorL;
     }
 }
