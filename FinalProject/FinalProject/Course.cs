@@ -13,20 +13,20 @@ namespace FinalProject
         public static int newId = 1;
         public String Id { get; set; }
 
-        public String name { get; set; }
+        public String Name { get; set; }
 
-        public ArrayList students = new ArrayList();
+        public ArrayList Studnets = new ArrayList();
 
-        public ArrayList finalScores = new ArrayList();
-        public Teacher teacher { get; set; }
-        public int maxStudents { get; set; }
+        public ArrayList FinalScores = new ArrayList();
+        public Teacher Teacher { get; set; }
+        public int MaxStudents { get; set; }
 
         public Course(String name, ArrayList students, Teacher teacher, int maxStudents) 
         {
-            this.name = name;
-            this.students = students;
-            this.teacher = teacher;
-            this.maxStudents = maxStudents;
+            this.Name = name;
+            this.Studnets = students;
+            this.Teacher = teacher;
+            this.MaxStudents = maxStudents;
             
             generateId();
         }
@@ -43,7 +43,7 @@ namespace FinalProject
 
         public override string ToString()
         {
-            return "Course"+name;
+            return "Course"+Name;
         }
 
         public override int GetHashCode() { return 0; }

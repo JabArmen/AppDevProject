@@ -10,7 +10,7 @@ namespace FinalProject
     [Serializable]
     public class Student : User
     {
-        public ArrayList studentCourses = new ArrayList();
+        public ArrayList StudentCourses = new ArrayList();
         public static int newId = 1;
         public Student(String name) : base(name)
         {

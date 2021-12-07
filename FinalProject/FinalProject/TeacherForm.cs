@@ -41,22 +41,26 @@ namespace FinalProject
         {
             errorL.Text = "";
             Course course1 = (Course)(FinalProject.Menu.courses[0]);
-            foreach (Course course in teacher.teachingCourses)
+            foreach (Course course in teacher.TeachingCourses)
             {
                  
                 if (course.Id == courseTB.Text)
                 {
-                    for (int i = 0; i < course.students.Count; i++)
+                    for (int i = 0; i < course.Studnets.Count; i++)
                     {
                         
-                        Student student = (Student)(course.students[i]);
+                        Student student = (Student)(course.Studnets[i]);
                         if (student.Id == StudentTB.Text)
                         {
                             double grade;
                             if (Double.TryParse(ScoreTB.Text, out grade)) {
-                                course.finalScores[i] = grade;
-                                FinalProject.Menu.SerializeAll();
-                               
+                                if (grade >= 0 && grade <= 100)
+                                {
+                                    course.FinalScores[i] = grade;
+                                    FinalProject.Menu.SerializeAll();
+                                    return;
+                                }
+                                errorL.Text = "the grade should be from 0 to 100";
                                 return;
                             }
                             errorL.Text = "the grade should be a numeric value";
@@ -83,20 +87,20 @@ namespace FinalProject
         {
             displayL.Text = "";
             
-            foreach (Course course in teacher.teachingCourses)
+            foreach (Course course in teacher.TeachingCourses)
             {
-                displayL.Text += "Course: " + course.name + "\n";
-                ArrayList students = new ArrayList(course.students);
+                displayL.Text += "Course: " + course.Name + "\n";
+                ArrayList students = new ArrayList(course.Studnets);
                 students.Sort(new StudentComparer());
                 for (int i = 0; i < students.Count; i++)
                 {
                     Student student1 = (Student)(students[i]);
-                    for (int j = 0; j < course.students.Count; j++)
+                    for (int j = 0; j < course.Studnets.Count; j++) 
                     {
-                        Student student2 = (Student)course.students[j];
+                        Student student2 = (Student)course.Studnets[j];
                         if(student1.Id == student2.Id)
                         {
-                            displayL.Text += "  " + student2.name + ": " + course.finalScores[j] + "\n";
+                            displayL.Text += "  " + student2.name + ": " + course.FinalScores[j] + "\n";
                         }
                     }
                 }

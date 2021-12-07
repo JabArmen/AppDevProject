@@ -40,6 +40,7 @@ namespace FinalProject
 
         private void Course_CheckedChanged(object sender, EventArgs e)
         {
+            displayL.Text = "";
             teacherTB.Text = "";
             nameTB.Text = "";
             if (Course.Checked == true)
@@ -57,18 +58,21 @@ namespace FinalProject
 
         private void studentRB_CheckedChanged(object sender, EventArgs e)
         {
+            displayL.Text = "";
             teacherTB.Text = "";
             nameTB.Text = "";
         }
 
         private void teacherRB_CheckedChanged(object sender, EventArgs e)
         {
+            displayL.Text = "";
             teacherTB.Text = "";
             nameTB.Text = "";
         }
         private void PasswordRB_CheckedChanged(object sender, EventArgs e)
         {
-            if(PasswordRB.Checked == true)
+            displayL.Text = "";
+            if (PasswordRB.Checked == true)
             {
                 addB.Text = "Change";
                 nameL.Text = "ID:";
@@ -89,6 +93,12 @@ namespace FinalProject
         }
         private void addB_Click(object sender, EventArgs e)
         {
+            
+            if (teacherTB.Text.Contains(" "))
+            {
+                errorL.Text = "password can't contain spaces";
+                return;
+            }
             errorL.Text = "";
             if (nameTB.Text != "")
             {
@@ -106,13 +116,11 @@ namespace FinalProject
                     FinalProject.Menu.SerializeAll();
                 } else if(PasswordRB.Checked == true)
                 {
-                    Boolean Userfound = false;
-                    
                     foreach (Teacher teacher in FinalProject.Menu.teachers)
                     {
                         if (teacher.Id == nameTB.Text)
                         {
-                            Userfound = true;
+                            
                             teacher.Password = teacherTB.Text;
                             return;
                         }
@@ -150,7 +158,7 @@ namespace FinalProject
                             Course course = new Course(nameTB.Text, new ArrayList(), teacher, 5);
                             
                             FinalProject.Menu.courses.Add(course);
-                            teacher.teachingCourses.Add(course);
+                            teacher.TeachingCourses.Add(course);
                         }
                         else
                             errorL.Text = "Teacher not found!";
@@ -185,14 +193,27 @@ namespace FinalProject
                     
                 }
             }
+            else if(PasswordRB.Checked == true)
+            {
+                ArrayList teachers = (FinalProject.Menu.teachers);
+                ArrayList students = (FinalProject.Menu.students);
+                foreach(Teacher teacher in teachers)
+                {
+                    displayL.Text += teacher.Id + ": " + teacher.Password + "\n";
+                }
+                foreach (Student student in students)
+                {
+                    displayL.Text += student.Id + ": " + student.Password + "\n";
+                }
+            }
             else
             {
                 ArrayList courses = (FinalProject.Menu.courses);
                 foreach (Course course in courses)
                 {
-                    displayL.Text += "Course: " + course.Id + "\n     Name: " + course.name + "\n     Teacher: "
-                        + course.teacher.name + "\n";
-                    foreach (Student student in course.students)
+                    displayL.Text += "Course: " + course.Id + "\n     Name: " + course.Name + "\n     Teacher: "
+                        + course.Teacher.name + "\n";
+                    foreach (Student student in course.Studnets)
                         displayL.Text += "     " + student.Id + ": " + student.name + "\n";
                     
                 }

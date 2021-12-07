@@ -31,7 +31,7 @@ namespace FinalProject
         private void DisplayScoresB_Click(object sender, EventArgs e)
         {
             displayL.Text = "";
-            foreach (Course course in student.studentCourses)
+            foreach (Course course in student.StudentCourses)
             {
                  Grade(course);
             }
@@ -39,12 +39,12 @@ namespace FinalProject
 
         private void Grade(Course course)
         {
-            for(int i = 0; i < course.students.Count; i++)
+            for(int i = 0; i < course.Studnets.Count; i++)
             {
-                Student thisStudent = (Student)course.students[i];
-                if (student.Id == thisStudent.Id && course.finalScores.Count > i)
+                Student thisStudent = (Student)course.Studnets[i];
+                if (student.Id == thisStudent.Id && course.FinalScores.Count > i)
                 {
-                    displayL.Text += course.name + ": " + course.finalScores[i] + "\n";
+                    displayL.Text += course.Name + ": " + course.FinalScores[i] + "\n";
                 }
             }
         }
@@ -55,9 +55,9 @@ namespace FinalProject
             ArrayList courses = FinalProject.Menu.courses;
             if (pickCourse(courses) != null)
             {
-                student.studentCourses.Add(pickCourse(courses));
-                pickCourse(courses).students.Add(student);
-                pickCourse(courses).finalScores.Add((double)-1);
+                student.StudentCourses.Add(pickCourse(courses));
+                pickCourse(courses).Studnets.Add(student);
+                pickCourse(courses).FinalScores.Add((double)-1);
                 FinalProject.Menu.SerializeAll();
                 
                 return;
@@ -72,7 +72,7 @@ namespace FinalProject
             if (pickCourse(courses) != null)
             {
                 Course course = pickCourse(courses);
-                displayL.Text += "Course: " + course.name + "\n" + "Teacher: " + course.teacher.name + "\n";
+                displayL.Text += "Course: " + course.Name + "\n" + "Teacher: " + course.Teacher.name + "\n";
             }
         }
         
