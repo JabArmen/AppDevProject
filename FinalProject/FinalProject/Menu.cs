@@ -33,7 +33,7 @@ namespace FinalProject
                 courses = DeserializeCourse();
                 Course.newId = DeserializeCourse().Count;
             }
-            PasswordTB.Text = "1234";
+            
         }
 
         private void SubmitB_Click(object sender, EventArgs e)
