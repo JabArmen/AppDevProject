@@ -29,22 +29,5 @@ namespace FinalProject
          */
         public abstract void generateId();
 
-        /*
-         * Put the entire string into a CamelCase format.
-         */
-        public static String ToCamelCase(String str)
-        {
-            str = str.Substring(0, 1).ToUpper() + str.Substring(1, str.Length);
-            for (int i = 0; i < str.Length; i++)
-            {
-                if (str.Substring(i, i + 1).Equals(" "))
-                {
-                    str = str.Substring(0, i + 1) +
-                            str.Substring(i + 1, i + 2).ToUpper() +
-                            str.Substring(i + 2, str.Length);
-                }
-            }
-            return str;
-        }
     }
 }
