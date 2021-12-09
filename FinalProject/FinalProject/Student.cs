@@ -11,7 +11,7 @@ namespace FinalProject
     public class Student : User
     {
         public ArrayList StudentCourses = new ArrayList();
-        public static int newId = 1;
+        public static int newId = Menu.students.Count + 1;
         public Student(String name) : base(name)
         {
             generateId();

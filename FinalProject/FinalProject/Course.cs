@@ -10,7 +10,7 @@ namespace FinalProject
     [Serializable]
     public class Course 
     {
-        public static int newId = 1;
+        public static int newId = Menu.courses.Count + 1;
         public String Id { get; set; }
 
         public String Name { get; set; }

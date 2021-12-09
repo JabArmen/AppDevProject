@@ -53,7 +53,7 @@ namespace FinalProject
         {
             errorL.Text = "";
             ArrayList courses = FinalProject.Menu.courses;
-            if (pickCourse(courses) != null)
+            if (pickCourse(courses) != null && !student.StudentCourses.Contains(pickCourse(courses)))
             {
                 student.StudentCourses.Add(pickCourse(courses));
                 pickCourse(courses).Studnets.Add(student);

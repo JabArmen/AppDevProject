@@ -10,7 +10,7 @@ namespace FinalProject
     [Serializable]
     public class Teacher : User
     {
-        public static int newId = 1;
+        public static int newId = Menu.teachers.Count +1;
 
         public ArrayList TeachingCourses = new ArrayList();
         

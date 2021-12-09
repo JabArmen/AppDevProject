@@ -46,28 +46,26 @@ namespace FinalProject
             // 
             this.welcomeL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcomeL.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.welcomeL.Location = new System.Drawing.Point(26, 7);
-            this.welcomeL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.welcomeL.Location = new System.Drawing.Point(35, 9);
             this.welcomeL.Name = "welcomeL";
-            this.welcomeL.Size = new System.Drawing.Size(288, 26);
+            this.welcomeL.Size = new System.Drawing.Size(384, 32);
             this.welcomeL.TabIndex = 1;
             this.welcomeL.Text = "Welcome";
             // 
             // displayL
             // 
             this.displayL.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.displayL.Location = new System.Drawing.Point(335, 13);
-            this.displayL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.displayL.Location = new System.Drawing.Point(447, 16);
             this.displayL.Name = "displayL";
-            this.displayL.Size = new System.Drawing.Size(213, 301);
+            this.displayL.Size = new System.Drawing.Size(284, 370);
             this.displayL.TabIndex = 10;
             // 
             // DisplayScoresB
             // 
-            this.DisplayScoresB.Location = new System.Drawing.Point(440, 332);
-            this.DisplayScoresB.Margin = new System.Windows.Forms.Padding(2);
+            this.DisplayScoresB.Location = new System.Drawing.Point(587, 409);
+            this.DisplayScoresB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DisplayScoresB.Name = "DisplayScoresB";
-            this.DisplayScoresB.Size = new System.Drawing.Size(98, 26);
+            this.DisplayScoresB.Size = new System.Drawing.Size(131, 32);
             this.DisplayScoresB.TabIndex = 11;
             this.DisplayScoresB.Text = "Display Scores";
             this.DisplayScoresB.UseVisualStyleBackColor = true;
@@ -81,18 +79,19 @@ namespace FinalProject
             this.panel1.Controls.Add(this.RegesterB);
             this.panel1.Controls.Add(this.CourseL);
             this.panel1.Controls.Add(this.courseTB);
-            this.panel1.Location = new System.Drawing.Point(30, 49);
+            this.panel1.Location = new System.Drawing.Point(40, 60);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(262, 240);
+            this.panel1.Size = new System.Drawing.Size(349, 295);
             this.panel1.TabIndex = 12;
             // 
             // closeB
             // 
             this.closeB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeB.Location = new System.Drawing.Point(20, 193);
-            this.closeB.Margin = new System.Windows.Forms.Padding(2);
+            this.closeB.Location = new System.Drawing.Point(27, 238);
+            this.closeB.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.closeB.Name = "closeB";
-            this.closeB.Size = new System.Drawing.Size(118, 43);
+            this.closeB.Size = new System.Drawing.Size(157, 53);
             this.closeB.TabIndex = 14;
             this.closeB.Text = "<<Login ";
             this.closeB.UseVisualStyleBackColor = true;
@@ -100,9 +99,10 @@ namespace FinalProject
             // 
             // CourseInfoB
             // 
-            this.CourseInfoB.Location = new System.Drawing.Point(135, 68);
+            this.CourseInfoB.Location = new System.Drawing.Point(180, 84);
+            this.CourseInfoB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CourseInfoB.Name = "CourseInfoB";
-            this.CourseInfoB.Size = new System.Drawing.Size(103, 23);
+            this.CourseInfoB.Size = new System.Drawing.Size(137, 28);
             this.CourseInfoB.TabIndex = 4;
             this.CourseInfoB.Text = "Course Info";
             this.CourseInfoB.UseVisualStyleBackColor = true;
@@ -110,50 +110,54 @@ namespace FinalProject
             // 
             // RegesterB
             // 
-            this.RegesterB.Location = new System.Drawing.Point(164, 91);
+            this.RegesterB.Location = new System.Drawing.Point(219, 112);
+            this.RegesterB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.RegesterB.Name = "RegesterB";
-            this.RegesterB.Size = new System.Drawing.Size(75, 23);
+            this.RegesterB.Size = new System.Drawing.Size(100, 28);
             this.RegesterB.TabIndex = 3;
-            this.RegesterB.Text = "Regester";
+            this.RegesterB.Text = "Register";
             this.RegesterB.UseVisualStyleBackColor = true;
             this.RegesterB.Click += new System.EventHandler(this.RegesterB_Click);
             // 
             // CourseL
             // 
             this.CourseL.AutoSize = true;
-            this.CourseL.Location = new System.Drawing.Point(3, 36);
+            this.CourseL.Location = new System.Drawing.Point(4, 44);
+            this.CourseL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.CourseL.Name = "CourseL";
-            this.CourseL.Size = new System.Drawing.Size(49, 15);
+            this.CourseL.Size = new System.Drawing.Size(53, 16);
             this.CourseL.TabIndex = 1;
             this.CourseL.Text = "Course:";
             // 
             // courseTB
             // 
-            this.courseTB.Location = new System.Drawing.Point(58, 36);
+            this.courseTB.Location = new System.Drawing.Point(77, 44);
+            this.courseTB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.courseTB.Name = "courseTB";
-            this.courseTB.Size = new System.Drawing.Size(181, 20);
+            this.courseTB.Size = new System.Drawing.Size(240, 22);
             this.courseTB.TabIndex = 0;
             // 
             // errorL
             // 
             this.errorL.AutoSize = true;
             this.errorL.ForeColor = System.Drawing.Color.Red;
-            this.errorL.Location = new System.Drawing.Point(27, 299);
+            this.errorL.Location = new System.Drawing.Point(36, 368);
+            this.errorL.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.errorL.Name = "errorL";
-            this.errorL.Size = new System.Drawing.Size(0, 15);
+            this.errorL.Size = new System.Drawing.Size(0, 16);
             this.errorL.TabIndex = 13;
             // 
             // StudentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 368);
+            this.ClientSize = new System.Drawing.Size(743, 453);
             this.Controls.Add(this.errorL);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.DisplayScoresB);
             this.Controls.Add(this.displayL);
             this.Controls.Add(this.welcomeL);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "StudentForm";
             this.Text = "StudentForm";
             this.Load += new System.EventHandler(this.StudentForm_Load);
